@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 import Products from '../../components/Products';
+import Page from '../../components/Page';
 
 //axios.defaults.baseURL = process.env.API
 // console.log(process.env.API+' no es pública')
@@ -22,5 +23,7 @@ export async function getServerSideProps({req}){
 
 
 export default function index({products}) {
-  return <Products products={products}/>;
+  return <Page>
+      <Products products={products}/>
+  </Page>;
 }
