@@ -1,14 +1,10 @@
 import admin from 'firebase-admin'
-import serviceAccount from './credentials.json'
 
 let app
 
 if(!admin.apps.length){
     app = admin.initializeApp({
-        // credential: applicationDefault(),
-        // databaseURL: 'https://ClaseNext.firebaseio.com'
-        // databaseURL: 'https://<DATABASE_NAME>.firebaseio.com'
-        credential: admin.credential.cert(serviceAccount)
+        credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_CREDENTIALS))
     });
 }else{
     app = admin.app()
