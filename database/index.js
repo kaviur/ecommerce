@@ -3,8 +3,8 @@ import serviceAccount from './credentials.json'
 require('dotenv').config()
 
 let app
-//const clave = process.env.FIREBASE_PRIVATE_KEY
-const clave = process.env.KEY+process.env.KEY2+process.env.KEY3+process.env.KEY4+process.env.KEY5+process.env.KEY6+process.env.KEY8+process.env.KEY9+process.env.KEY10+process.env.KEY11+process.env.KEY12+process.env.KEY13+process.env.KEY14+process.env.KEY15+process.env.KEY16+process.env.KEY17
+const clave = process.env.FIREBASE_PRIVATE_KEY
+//const clave = process.env.KEY+process.env.KEY2+process.env.KEY3+process.env.KEY4+process.env.KEY5+process.env.KEY6+process.env.KEY8+process.env.KEY9+process.env.KEY10+process.env.KEY11+process.env.KEY12+process.env.KEY13+process.env.KEY14+process.env.KEY15+process.env.KEY16+process.env.KEY17
 
 const credenciales = {
     "project_id": process.env.FIREBASE_PROJECT_ID,
