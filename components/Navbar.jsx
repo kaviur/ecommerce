@@ -5,34 +5,37 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbar() {
   return (
-    <nav className="flex flex-row w-4/12 px-4 my-auto">
-      <ul>
-        <li className="inline p-2">
-          <Link href="/iniciar-sesion">
-            <a>Iniciar sesión</a>
-          </Link>
-        </li>
-        <li className="inline p-2">
-          <Link href="/registrarse">
-            <a>Registrarse</a>
-          </Link>
-        </li>
-        <li className="inline p-2">
-          <Link href="/favoritos">
-            <a>Favoritos</a>
-          </Link>
-        </li>
-        <li className="inline p-2">
-          <Link href="/carrito">
-            <a className="relative">
-              <FontAwesomeIcon icon={faCartShopping} />
-              <span className="absolute w-4 h-4 text-xs font-thin top-1 left-5 text-stone-900 dark:text-stone-50">
-                0
-              </span>
-            </a>
-          </Link>
-        </li>
-      </ul>
+    <nav className="bg-slate-50 shadow-md mb-14 py-4 font-semibold">
+      <div className="px-5 flex justify-between max-w-7xl mx-auto">
+        <Link href={"/"}>Inicio</Link>
+        <ul>
+          <li className="inline p-2">
+            <Link href="/iniciar-sesion">
+              <a>Iniciar sesión</a>
+            </Link>
+          </li>
+          <li className="inline p-2">
+            <Link href="/registrarse">
+              <a>Registrarse</a>
+            </Link>
+          </li>
+          <li className="inline p-2">
+            <Link href="/favoritos">
+              <a>Favoritos</a>
+            </Link>
+          </li>
+          <li className="inline p-2">
+            <Link href="/carrito">
+              <a className="relative">
+                <FontAwesomeIcon icon={faCartShopping} />
+                <span className="absolute w-4 h-4 text-xs font-thin top-1 left-5 text-stone-900 dark:text-stone-50">
+                  0
+                </span>
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }
