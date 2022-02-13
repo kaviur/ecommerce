@@ -1,9 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbar() {
+  const {items:cart} = useSelector((state)=>state.cart)
+
+
+
   return (
     <nav className="bg-slate-50 shadow-md mb-14 py-4 font-semibold">
       <div className="px-5 flex justify-between max-w-7xl mx-auto">
@@ -25,12 +30,13 @@ export default function Navbar() {
             </Link>
           </li>
           <li className="inline p-2">
-            <Link href="/carrito">
+            <Link href="/cart">
               <a className="relative">
-                <FontAwesomeIcon icon={faCartShopping} />
-                <span className="absolute w-4 h-4 text-xs font-thin top-1 left-5 text-stone-900 dark:text-stone-50">
+                <div><FontAwesomeIcon icon={faCartShopping} /></div>
+                <div>{cart.length}</div> 
+                {/* <span className="absolute w-4 h-4 text-xs font-thin top-1 left-5 text-stone-900 dark:text-stone-50">
                   0
-                </span>
+                </span> */}
               </a>
             </Link>
           </li>
