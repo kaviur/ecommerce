@@ -14,9 +14,11 @@ export default function Page({children}) {
   
   return <div>
     <Navbar/>
-    <main className='px-5 max-w-4xl mx-auto'>
+    <div>
+    <main className='container px-5 max-w-7xl mx-auto'>
         {children}
     </main>
+    </div>
     <Footer></Footer>
   </div>;
 }

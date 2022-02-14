@@ -44,7 +44,7 @@ const cartSlice = createSlice({
     reducers:{
         addToCart:(state,action)=>{
             // action.payload es el nuevo producto
-            console.log("Producto",{...action.payload})
+            //console.log("Producto",{...action.payload})
             const index = state.items.findIndex(item=>item.id===action.payload.id)
             if(index!==-1){
                 state.items[index].cantidad +=1
@@ -57,7 +57,7 @@ const cartSlice = createSlice({
         },
         removeFromCart:(state,{payload})=>{
             state.items = state.items.filter(product=>product.id!==payload.id)
-            console.log(state.items)
+            //console.log(state.items)
         },
         reduceFromCart:(state,{payload})=>{
             const index = state.items.findIndex(item=>item.id===payload.id)
