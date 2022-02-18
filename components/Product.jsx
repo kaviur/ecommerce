@@ -2,9 +2,6 @@ import React, {useState} from 'react';
 import { motion } from "framer-motion"
 import { useDispatch } from 'react-redux';
 import { addToCart,saveCart } from '../features/Cart';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartPlus, faCartArrowDown, faTrash } from '@fortawesome/free-solid-svg-icons';
-
 
 
 export default function Product({product}) {
