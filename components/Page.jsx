@@ -5,20 +5,20 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 
 
-export default function Page({children}) {
+export default function Page({ children }) {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCart());
+  }, []);
 
-  const dispatch = useDispatch()
-  useEffect(()=>{
-    dispatch(getCart())
-  },[])
-  
-  return <div>
-    <Navbar/>
+  return (
     <div>
-    <main className='container px-5 max-w-7xl mx-auto'>
-        {children}
-    </main>
+      <Navbar />
+        <main className="container px-5 max-w-7xl mx-auto">{children}</main>
+        <footer>
+           <Footer />
+        </footer>
+     
     </div>
-    <Footer/>
-  </div>;
+  );
 }

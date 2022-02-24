@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import { motion } from "framer-motion"
 import { useDispatch } from 'react-redux';
 import { addToCart,saveCart } from '../features/Cart';
-
+import { useSession} from "next-auth/react"
 
 export default function Product({product}) {
   const [amount, setAmount] = useState(false)
   const dispatch = useDispatch()
+  const { data: session } = useSession()
 
   const agregarCarrito = () => {
     dispatch(addToCart(product))
@@ -34,9 +35,10 @@ export default function Product({product}) {
           <p className='text-center py-2 text-gray-800'>{product.description}</p>
           <h3 className="text-2xl font-bold text-center text-green-700">{"$"+product.price}</h3>
           <div className="flex justify-around">
-            <button className="text-white py-2 px-4 rounded-full bg-black hover:bg-neutral-900" type="button" onClick={agregarCarrito}>
+            {session?<button className="text-white py-2 px-4 rounded-full bg-black hover:bg-neutral-900" type="button" onClick={agregarCarrito}>
               Agregar al carrito
-            </button>
+            </button> : <p className='text-center font-bold'>Inicie sesión para realizar la compra de los articulos</p> }
+            
           </div>
         </div>
       </article>

@@ -5,11 +5,13 @@ import Page from '../components/Page';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import axios from "axios";
 
+
 export default function cart() {
   const {items} = useSelector(state=>state.cart)
 
+
   return <Page>
-      <div className="grid grid-cols-4 gap-3">
+    <div>
         <section className="col-span-3">
           <Car products={items}></Car>
         </section>
@@ -39,5 +41,6 @@ export default function cart() {
           </PayPalScriptProvider>
         </section>
       </div>
+      
   </Page>;
 }
