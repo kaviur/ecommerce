@@ -118,10 +118,10 @@ export default function Footer() {
         </div>
       </section>
       <section className="w-full p-2 border-t-2 border-slate-300 dark:border-neutral-300">
-        <small>
+        <h2 className='text-center'>
           Copyright © YYYY-2022 e-commerce.com Dirección. Todos los derechos
           reservados.
-        </small>
+        </h2>
       </section>
     </footer>
   );

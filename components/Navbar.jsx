@@ -3,9 +3,11 @@ import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Navbar() {
   const {items:cart} = useSelector((state)=>state.cart)
+  const { data: session } = useSession()
 
 
 
@@ -14,13 +16,14 @@ export default function Navbar() {
     <nav className="bg-slate-50 shadow-md mb-14 py-4 font-semibold">
       <div className="px-5 flex justify-between max-w-7xl mx-auto">
         <Link href={"/"}>Inicio</Link>
-        <ul className='flex'>
+        <ul className="flex">
           <li>
-            <Link href="/iniciar-sesion">
-              <a>Iniciar sesión</a>
-            </Link>
+            <p>{session ? <button className='font-semibold' onClick={() => signOut()}>Cerrar Sesion</button>:<button className='font-semibold' onClick={() => signIn()}>Inciar Sesion</button>}</p>
+            {console.log(session?.user)}
+            
+         
           </li>
-          <li className='mx-3'>
+          <li className="mx-3">
             <Link href="/registrarse">
               <a>Registrarse</a>
             </Link>
@@ -30,12 +33,15 @@ export default function Navbar() {
               <a>Favoritos</a>
             </Link>
           </li>
-          <li className='mx-3'>
+          <li className="mx-3">
             <Link href="/cart">
               <a>
                 <div className="flex">
-                  <div className='mr-1'>
-                    <FontAwesomeIcon className="text-green-600" icon={faCartShopping} />
+                  <div className="mr-1">
+                    <FontAwesomeIcon
+                      className="text-green-600"
+                      icon={faCartShopping}
+                    />
                   </div>
                   <div>{cart.length}</div>
                 </div>
@@ -47,6 +53,11 @@ export default function Navbar() {
     </nav>
   );
 }
+
+
+
+
+
 /*import React, { useState } from 'react';
 import Link from 'next/link';
 

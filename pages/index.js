@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import Saludo from '../components/Saludo'
-import Link from 'next/link'
 import Products from '../components/Products'
 import axios from 'axios';
 import Page from '../components/Page';
@@ -20,6 +18,8 @@ export async function getServerSideProps({req}){
 }
 
 export default function Home({products}) {
+
+  
   const [open,setOpen] = useState(false)
   return (
     <Page>

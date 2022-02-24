@@ -19,6 +19,6 @@ export default function Page({children}) {
         {children}
     </main>
     </div>
-    <Footer></Footer>
+    <Footer/>
   </div>;
 }
