@@ -37,7 +37,6 @@ export default function Product({product}) {
           <h3 className="text-2xl font-bold text-center text-red-600">{product.name}</h3>
           <p className='text-center py-2 text-gray-800'>{product.description}</p>
           <h3 className="text-2xl font-bold text-center text-green-700">{"$"+product.price}</h3>
-          {console.log(product.slug)}
           <div className="flex justify-around">
             {/* TODO: descommentar y eliminar el button de abajo */}
             {/* session?<button className="text-white py-2 px-4 rounded-full bg-black hover:bg-neutral-900" type="button" onClick={agregarCarrito}>
