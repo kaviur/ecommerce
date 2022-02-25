@@ -5,38 +5,38 @@ export default function NavMenu() {
     <nav className="flex flex-row content-center w-3/4 p-2 mx-auto font-semibold text-stone-900 dark:text-stone-50 justify-evenly">
       <ul>
         <li className="inline p-2 hover:border-t-2">
-          <Link href="/">
-            <a>Inicio</a>
+          <Link href="/category/top">
+            <a>Tops</a>
           </Link>
         </li>
         <li className="inline p-2 hover:border-t-2">
-          <Link href="/productos">
-            <a>Productos</a>
+          <Link href="/category/jean">
+            <a>Jeans</a>
           </Link>
         </li>
         <li className="inline p-2 hover:border-t-2">
-          <Link href="/ofertas">
-            <a>Ofertas</a>
+          <Link href="/category/sport">
+            <a>Sport</a>
           </Link>
         </li>
         <li className="inline p-2 hover:border-t-2">
-          <Link href="/tabla-de-talles">
-            <a>Tabla de talles</a>
+          <Link href="/category/short">
+            <a>Shorts</a>
           </Link>
         </li>
         <li className="inline p-2 hover:border-t-2">
-          <Link href="/vender">
-            <a>Vender</a>
+          <Link href="/category/dress">
+            <a>Dresses</a>
           </Link>
         </li>
         <li className="inline p-2 hover:border-t-2">
-          <Link href="/preguntas-frecuentes">
-            <a>Preguntas frecuentes</a>
+          <Link href="/category/bottons">
+            <a>Bottons</a>
           </Link>
         </li>
         <li className="inline p-2 hover:border-t-2">
-          <Link href="/ayuda">
-            <a>Ayuda</a>
+          <Link href="/category/onsale">
+            <a>On Sale!</a>
           </Link>
         </li>
       </ul>
