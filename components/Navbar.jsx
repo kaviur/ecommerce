@@ -44,7 +44,8 @@ export default function Navbar() {
           <li className="mx-3">
             <Link href="/cart">
               <a>
-                {session ? (
+                {/* TODO: descommentar y eliminar el div de abajo */}
+                {/* session ? (
                   <div className="flex">
                     <div className="mr-1">
                       <FontAwesomeIcon
@@ -56,7 +57,16 @@ export default function Navbar() {
                   </div>
                 ) : (
                   <div></div>
-                )}
+                ) */}
+                <div className="flex">
+                    <div className="mr-1">
+                      <FontAwesomeIcon
+                        className="text-green-600"
+                        icon={faCartShopping}
+                      />
+                    </div>
+                    <div>{cart.length}</div>
+                  </div>
               </a>
             </Link>
           </li>
