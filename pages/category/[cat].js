@@ -20,8 +20,7 @@ export default function Categories({products,cat}) {
 
     return (
     <Page>
-      <p>Hola {cat}</p>
-      {console.log(products)}
+      <h1>{cat}</h1>
       <Products products={products}/>
     </Page>
   )
