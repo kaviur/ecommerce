@@ -1,6 +1,9 @@
 import axios from 'axios';
 import Page from '../../components/Page';
 import Stars from '../../components/Stars';
+import { useDispatch } from 'react-redux';
+import { addToCart,saveCart } from '../../features/Cart';
+import React, {useState} from 'react';
 
 export async function getServerSideProps({req, query}){
 
@@ -18,12 +21,18 @@ export async function getServerSideProps({req, query}){
 
 export default function Index({product,slug}) {
 
+  const dispatch = useDispatch()
+  const [amount, setAmount] = useState(false)
+
+  const agregarCarrito = () => {
+    dispatch(addToCart(product[0]))
+    dispatch(saveCart())
+    setAmount(true)
+  }
+
     return (
     <Page>
-      <p>Hola {product[0].description}</p>
-      
-      <p>Hola {product[0].price}</p>
-      <div className="container grid grid-cols-2 gap-6">
+      <div className="container grid grid-cols-2 gap-6 pt-6">
         {/* imágenes */}
         <div>
           <img src={product[0].img} alt={product[0].name} className="w-full"/>
@@ -69,6 +78,8 @@ export default function Index({product,slug}) {
           </div>
 
           <p className="mt-4 text-gray-600">{product[0].description}</p>
+
+          <button className="text-white py-2 px-4 rounded-full bg-black hover:bg-neutral-900" type="button" onClick={agregarCarrito}>Agregar al carrito</button>
         </div>
       </div>
     </Page>

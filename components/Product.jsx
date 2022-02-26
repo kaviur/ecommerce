@@ -31,7 +31,7 @@ export default function Product({product}) {
       className="bg-white shadow-md"
     >
     <NextLink href={`/product/${product.slug}`} passHref >
-      <article className="shadow-md bg-slate-200">
+      <article className="shadow-md bg-slate-200 mt-10">
         <img src={product.img}></img>
         <div className="py-2 mb-4">
           <h3 className="text-2xl font-bold text-center text-red-600">{product.name}</h3>

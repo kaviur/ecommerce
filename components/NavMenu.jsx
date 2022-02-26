@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function NavMenu() {
   return (
-    <nav className="flex flex-row content-center w-3/4 p-2 mx-auto font-semibold text-stone-900 dark:text-stone-50 justify-evenly">
+    <nav className="flex flex-row content-center w-full p-2 mx-auto font-semibold bg-zinc-900 text-white dark:text-stone-50 justify-evenly">
       <ul>
         <li className="inline p-2 hover:border-t-2">
           <Link href="/category/top">

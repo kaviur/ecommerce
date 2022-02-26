@@ -3,19 +3,25 @@ import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, signIn, signOut } from "next-auth/react";
+import {GiShoppingBag} from 'react-icons/gi';
+
 
 export default function Navbar() {
   const {items:cart} = useSelector((state)=>state.cart)
   const { data: session } = useSession()
 
-
-
-
   return (
-    <nav className="bg-slate-50 shadow-md mb-14 py-4 font-semibold">
+    <nav className="bg-slate-50 container flex items-center justify-between p-4">
       <div className="px-5 flex justify-between max-w-7xl mx-auto">
-        <Link href={"/"}>Inicio</Link>
+        <Link href={"/"}>
+          <label htmlFor="" className="text-yellow-800 font-bold ">
+          <GiShoppingBag 
+            className = "text-red-600 text-3xl font-medium"
+          />
+          Shopping.com
+          </label>
+        </Link>
         <ul className="flex justify-between">
           <li>
             <Link href="/cart">
